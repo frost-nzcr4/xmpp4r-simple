@@ -16,7 +16,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 require 'rake/testtask'
-require 'rake/rdoctask'
+require 'rdoc/task'
 
 desc "Package Gem"
 task :package do
@@ -33,7 +33,7 @@ Rake::TestTask.new :tests do |test|
 end
 
 desc "Generate Documentation"
-Rake::RDocTask.new do |rdoc|
+RDoc::Task.new do |rdoc|
   rdoc.main = "README"
   rdoc.rdoc_dir = "doc"
   rdoc.rdoc_files.include("README", "COPYING", "lib/*.rb")
